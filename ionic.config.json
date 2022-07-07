@@ -1,0 +1,7 @@
+{
+  "name": "./sanitas-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
