@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div id="header-image">
+      <ion-img src="assets/logo.jpg" class="ion-margin"></ion-img>
+      <ion-text id="image-text" class="ion-text-center"
+        >Prueba técnica</ion-text
+      >
+    </div>
+
+    <div id="form">
+      <ion-item-group>
+        <ion-item class="ion-no-padding">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-input placeholder="Email" class="ion-padding"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input placeholder="Contraseña" class="ion-padding"></ion-input>
+        </ion-item>
+        <ion-item
+          lines="none"
+          class="ion-no-padding ion-margin-top ion-margin-bottom"
+        >
+          <ion-label>Recordar</ion-label>
+          <ion-toggle></ion-toggle>
+        </ion-item>
+      </ion-item-group>
+      <div class="btn-container">
+        <ion-button
+          expand="full"
+          size="large"
+          class="ion-no-margin ion-text-capitalize"
+          >Acceder</ion-button
+        >
+        <ion-button
+          shape="round"
+          fill="outline"
+          size="large"
+          class="ion-no-margin ion-text-capitalize ion-margin"
+          >Acceder</ion-button
+        >
+      </div>
+    </div>
   </div>
 </ion-content>
