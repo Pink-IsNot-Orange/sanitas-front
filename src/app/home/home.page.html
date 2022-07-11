@@ -1,45 +1,84 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <div id="header-image">
-      <ion-img src="assets/logo.jpg" class="ion-margin"></ion-img>
-      <ion-text id="image-text" class="ion-text-center"
-        >Prueba técnica</ion-text
-      >
-    </div>
-
-    <div id="form">
-      <ion-item-group>
-        <ion-item class="ion-no-padding">
-          <ion-icon name="person-outline"></ion-icon>
-          <ion-input placeholder="Email" class="ion-padding"></ion-input>
-        </ion-item>
-        <ion-item class="ion-no-padding">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <ion-input placeholder="Contraseña" class="ion-padding"></ion-input>
-        </ion-item>
-        <ion-item
-          lines="none"
-          class="ion-no-padding ion-margin-top ion-margin-bottom"
-        >
-          <ion-label>Recordar</ion-label>
-          <ion-toggle></ion-toggle>
-        </ion-item>
-      </ion-item-group>
-      <div class="btn-container">
-        <ion-button
-          expand="full"
-          size="large"
-          class="ion-no-margin ion-text-capitalize"
-          >Acceder</ion-button
-        >
-        <ion-button
-          shape="round"
-          fill="outline"
-          size="large"
-          class="ion-no-margin ion-text-capitalize ion-margin"
-          >Acceder</ion-button
+    <div>
+      <div id="header-image">
+        <ion-img src="assets/logo.jpg" class="ion-margin"></ion-img>
+        <ion-text id="image-text" class="ion-text-center"
+          >Prueba técnica</ion-text
         >
       </div>
+
+      <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <ion-item-group>
+          <ion-item class="ion-no-padding">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input
+              placeholder="Email"
+              class="ion-padding"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+          <ion-text
+            color="danger"
+            *ngIf="form.touched&&form.get('email').errors?.required"
+          >
+            Campo requerido
+          </ion-text>
+          <ion-text
+            color="danger"
+            class="form-error"
+            *ngIf="form.touched&&form.get('email').errors?.email"
+          >
+            Email no valido
+          </ion-text>
+          <ion-item class="ion-no-padding">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input
+              placeholder="Contraseña"
+              type="password"
+              class="ion-padding"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+          <ion-text
+            color="danger"
+            *ngIf="form.touched&&form.get('password').errors?.required"
+          >
+            Campo requerido
+          </ion-text>
+          <ion-text
+            color="danger"
+            class="form-error"
+            *ngIf="form.touched&&form.get('password').errors?.minlength"
+          >
+            Debe de tener al menos 5 caractéres
+          </ion-text>
+          <ion-item
+            lines="none"
+            class="ion-no-padding ion-margin-top ion-margin-bottom"
+          >
+            <ion-label>Recordar</ion-label>
+            <ion-toggle formControlName="rememberMe"></ion-toggle>
+          </ion-item>
+        </ion-item-group>
+        <div class="btn-container">
+          <ion-button
+            expand="full"
+            size="large"
+            class="ion-no-margin ion-text-capitalize"
+            type="submit"
+            >Acceder</ion-button
+          >
+          <ion-button
+            shape="round"
+            fill="outline"
+            size="large"
+            class="ion-no-margin ion-text-capitalize ion-margin"
+            type="submit"
+            >Acceder</ion-button
+          >
+        </div>
+      </form>
     </div>
   </div>
 </ion-content>

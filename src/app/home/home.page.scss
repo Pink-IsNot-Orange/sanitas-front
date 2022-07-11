@@ -1,34 +1,5 @@
-#container {
-  min-width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-#form {
-  width: 90%;
-  max-width: 500px;
-  margin: auto;
-  background-color: #fff;
-}
-
-#header-image {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 500px;
-  margin: auto;
-  background-color: transparent;
-  transition: all 0.5s ease;
-}
-
-#image-text {
-  display: none;
-}
-
 ion-img {
-  max-width: 150;
+  max-width: 150px;
   width: 150px;
   margin: 2rem auto;
   aspect-ratio: 1 / 1;
@@ -43,21 +14,40 @@ ion-icon {
 ion-item-group {
   padding: 1rem 1.5rem 0;
   ion-item {
-    --ion-padding-top: 1rem 0;
-    --padding-end: 0px;
     --inner-padding-end: 0px;
-    --padding-start: 0px;
-    --inner-padding-start: 0px;
   }
 }
 
-ion-button {
-  --box-shadow: 0 0 0;
+#container {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+#form {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  background-color: #fff;
+}
+
+#header-image {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+#image-text {
+  opacity: 0;
 }
 
 .btn-container {
   text-align: center;
-  transition: all 0.2s ease;
 }
 
 .btn-container ion-button:first-child {
@@ -68,22 +58,26 @@ ion-button {
   display: none;
 }
 
+.form-error {
+  color: ;
+}
+
 @media (min-width: 920px) {
   #container {
+    justify-content: center;
+    height: 100%;
   }
+
   #header-image {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
     background-color: #fff;
+    transition: all 0.6s;
   }
 
   #image-text {
-    display: block;
     font-size: 1.5rem;
-    transition: all 0.5s 1s ease;
+    opacity: 1;
+    margin: 0.8rem;
+    transition: all 0.6s;
   }
 
   .btn-container ion-button:first-child {
